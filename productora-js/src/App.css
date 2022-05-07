@@ -1,5 +1,24 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;  
+  color: white;
+  background-color: black;
+}
+
+.prueba {
+padding-bottom: 2px;
+border-style:solid;
+border-color: purple;
+}
+
+/* 
+Estilos que vienen por default al crear el proyecto
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -40,3 +59,4 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+ */
