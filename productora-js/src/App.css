@@ -12,7 +12,9 @@
   --accent_color: #7C34D5;
   --white: #FFFFFF;
 }
-
+.blanco {
+  color: #FFFFFF;
+}
 .prueba {
 padding-bottom: 2px;
 border-style:solid;

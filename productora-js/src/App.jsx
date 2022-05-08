@@ -1,15 +1,15 @@
 import React from 'react'
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
+    <div>    
     <React.Fragment>
       <Navbar />
     </React.Fragment>
+    </div>
   )
 }
 
