@@ -5,7 +5,12 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 200;  
   color: white;
-  background-color: black;
+  background-color: #121212;
+}
+:root {
+  --primary_color: #BB86FC;
+  --accent_color: #7C34D5;
+  --white: #FFFFFF;
 }
 
 .prueba {
