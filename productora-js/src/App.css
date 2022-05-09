@@ -7,7 +7,7 @@
   color: white;
 }
 body {
-  background-color: #121212;
+  background-color: #121212 !important;
 }
 :root {
   --primary_color: #BB86FC;

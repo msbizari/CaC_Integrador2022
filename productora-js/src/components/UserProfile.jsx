@@ -19,8 +19,8 @@ export default function Profile() {
     const userEmailSeleccionado = function(e){
         setEmail(e.target.value);
     };
-    const userPicSeleccionado = function(e){
-        setPic(e.target.value);
+    const userPicSeleccionado = function(){
+        setPic('nonUser.png');
     };
 
     return (
@@ -28,20 +28,24 @@ export default function Profile() {
             <Navbar></Navbar>
             <div className='container blanco' id='perfilSection'>
                 <section className='col-sm-12 col-md-5 col-lg-6'>
-                    <p className='encabezadoSize blanco'>{userName} {userLastName}</p>
-                    <img src={'"../img/' + {userPic} + '"'} alt="Foto de perfil" />
+                    <p className='encabezadoSize blanco capitalize'>{userName} {userLastName}</p>
+                    <img src="src/img/nonUser.png" alt="Foto de perfil" />
+                    <img src={'"src/img/' + {userPic} + '"'} alt="Foto de perfil" />
+                    <button onClick={userPicSeleccionado} className='btnVioletaRedondo'>Cambiar foto de perfil</button>
+                    <button className='btnVioletaRedondo'>Cerrar sesión</button>
                 </section>
+
                 <section className='col-sm-12 col-md-7 col-lg-6'>
                     <p className='encabezadoSize blanco'>Configuración de la cuenta</p>
                     <form action="" method='post' id='formProfileEdit'>
                         <fieldset>
                             <div>
                                 <label htmlFor="nombre">Nombre</label>
-                                <input type="text" autoComplete='given-name' onChange={userNameSeleccionado} placeholder={userName}/>
+                                <input type="text" className='capitalize' autoComplete='given-name' onChange={userNameSeleccionado} placeholder={userName}/>
                             </div>
                             <div>
                                 <label htmlFor="apellido">Apellido</label>
-                                <input type="text" autoComplete='family-name' onChange={userLastNameSeleccionado} placeholder={userLastName}/>
+                                <input type="text" className='capitalize' autoComplete='family-name' onChange={userLastNameSeleccionado} placeholder={userLastName}/>
                             </div>
                         </fieldset>
                         <fieldset>
