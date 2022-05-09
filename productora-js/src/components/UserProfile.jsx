@@ -31,8 +31,8 @@ export default function Profile() {
                     <p className='encabezadoSize blanco capitalize'>{userName} {userLastName}</p>
                     <img src="src/img/nonUser.png" alt="Foto de perfil" />
                     <img src={'"src/img/' + {userPic} + '"'} alt="Foto de perfil" />
-                    <button onClick={userPicSeleccionado} className='btnVioletaRedondo'>Cambiar foto de perfil</button>
-                    <button className='btnVioletaRedondo'>Cerrar sesión</button>
+                    <button onClick={userPicSeleccionado} className='btnSession'>Cambiar foto de perfil</button>
+                    <button className='btnSession'>Cerrar sesión</button>
                 </section>
 
                 <section className='col-sm-12 col-md-7 col-lg-6'>
@@ -65,7 +65,7 @@ export default function Profile() {
                             </div>
                             <div>
                                 <label htmlFor="apellido">Confirmar correo electrónico</label>
-                                <input type="email" required autoComplete='off' placeholder={userEmail}/>
+                                <input type="email" autoComplete='off' placeholder={userEmail}/>
                             </div>
                         </fieldset>
                         <button className='btnVioletaRedondo'>Guardar cambios</button>
