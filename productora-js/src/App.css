@@ -13,11 +13,6 @@ body {
   --primary_color: #BB86FC;
   --accent_color: #7C34D5;
   --white: #FFFFFF;
-<<<<<<< HEAD
-}
-.blanco {
-  color: #FFFFFF;
-=======
   --black_unactive: #5E5E5E;
   --red: #F24848;
 
@@ -34,7 +29,6 @@ body {
   border-radius: 20px;
   padding: 5px 15px;
   font-weight: bold;
->>>>>>> Martu
 }
 .prueba {
   padding-bottom: 2px;
