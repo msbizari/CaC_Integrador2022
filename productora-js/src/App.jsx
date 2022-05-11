@@ -8,8 +8,6 @@ function App() {
 
   return (
     <div>
-      <Profile></Profile>
-      <Nosotros></Nosotros> 
     <React.Fragment>
       <Navbar />
     </React.Fragment>
