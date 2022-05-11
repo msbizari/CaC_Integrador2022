@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import '../styles/userProfile.css';
 import Navbar from './Navbar';
 import { BiTrash } from "react-icons/bi";
@@ -8,8 +8,8 @@ import {IoMdClose} from "react-icons/io";
 export default function Profile() {
     let [userName, setName] = useState('nombre');
     let [userLastName, setLastName] = useState('apellido');
-    let [userPic, setPic] = useState('nonUser.png');
     let [userEmail, setEmail] = useState('nombre.apellido@gmail.com');
+    let [userPic, setPic] = useState('');
 
     const userNameSeleccionado = function(e){
         setName(e.target.value);
@@ -20,11 +20,19 @@ export default function Profile() {
     const userEmailSeleccionado = function(e){
         setEmail(e.target.value);
     };
-    const userPicSeleccionado = function(){
-        setPic('nonUser.png');
+    function userPicSeleccionado (e){
+        const imgPath = e.target.value.split(/[\\/]/);
+        console.log(imgPath);
+        const imgName = imgPath.at(-1)
+        setPic(imgName);
+        displayPicModal();
     };
+    function userPicEliminado(){
+        setPic('nonUser.png');
+        displaylDeletePicModal();
+    };
+
     /*Modal / overlay*/
-    
     var modalForPic = document.getElementById('modalForPic');
     window.addEventListener('click', clickOutsideModal); 
     function displayPicModal() {
@@ -52,6 +60,34 @@ export default function Profile() {
             modalForSession.style.display = "none";
         }
     }
+    
+    var modalForExit = document.getElementById('modalForExit');
+    window.addEventListener('click', clickOutsideModalExit); 
+    function displayExitModal() {
+        if (modalForExit.style.display == "none") {
+            modalForExit.style.display = "flex";
+        } else {
+            modalForExit.style.display="none"
+        }
+    } function clickOutsideModalExit(e){
+        if(e.target == modalForExit){
+            modalForExit.style.display = "none";
+        }
+    }
+
+    var modalDeletePic = document.getElementById('modalDeletePic');
+    window.addEventListener('click', clickOutsideModalExit); 
+    function displaylDeletePicModal() {
+        if (modalDeletePic.style.display == "none") {
+            modalDeletePic.style.display = "flex";
+        } else {
+            modalDeletePic.style.display="none"
+        }
+    } function clickOutsideModalExit(e){
+        if(e.target.modalDeletePic){
+            modalDeletePic.style.display = "none";
+        }
+    }
 
     return (
         <div>
@@ -59,15 +95,14 @@ export default function Profile() {
             <div className='container blanco' id='perfilSection'>
                 <section className='col-sm-12 col-md-5 col-lg-6'>
                     <p className='encabezadoSize blanco capitalize'>{userName} {userLastName}</p>
-                    <article> 
-                        <img src="src/img/nonUser.png" alt="Foto de perfil" />
-                        <div><BiTrash style={ {fill: "#121212", fontSize:"1.5rem",} }></BiTrash></div>
+                    <article onClick={displaylDeletePicModal}> 
+                        <img src={"src/img/" + userPic} id="imgProfile" alt="Foto de perfil" onError={userPicEliminado} />
+                        <button><BiTrash style={ {fill: "#121212", fontSize:"1.5rem",} }></BiTrash></button>
                     </article>
-                    <img src={'"src/img/' + {userPic} + '"'} alt="Foto de perfil" />
                     <button onClick={displayPicModal}className='btnVioletaRedondo'>Cambiar foto</button>
                     <div>
                         <button onClick={displaySessionModal}>Cambiar de cuenta</button>
-                        <button>Cerrar sesión</button>
+                        <button onClick={displayExitModal}>Cerrar sesión</button>
                     </div>
                 </section>
 
@@ -87,7 +122,7 @@ export default function Profile() {
                         <fieldset>
                             <div>
                                 <label htmlFor="pass">Nueva contraseña</label>
-                                <input type="password" autoComplete='new-password' minlength="6" name="pass" />
+                                <input type="password" autoComplete='new-password' minLength="6" name="pass" />
                             </div>
                             <div>
                                 <label htmlFor="confirmPass">Confirmar contraseña</label>
@@ -113,13 +148,13 @@ export default function Profile() {
                 <article>
                     <div><button onClick={displayPicModal}><IoMdClose style={ {fill: "var(--white)", fontSize:"1.5rem",} }></IoMdClose></button></div>
                     <label htmlFor="userPicture">Seleccioná una foto de perfil</label>
-                    <input type="file" name="userPicture" accept="image/png, image/jpeg" onChange={userPicSeleccionado}/>
+                    <input type="file" name="userPicture" accept="image/png, image/jpeg, image/jpg" onChange={userPicSeleccionado}/>
                 </article>
             </section>
             <section id='modalForSession' className='modalOverlay'>
                 <article>
                     <div><button onClick={displaySessionModal}><IoMdClose style={ {fill: "var(--white)", fontSize:"1.5rem",} }></IoMdClose></button></div>
-                    <p >Seleccioná una cuenta</p>
+                    <p className='encabezadoModal'>Seleccioná una cuenta</p>
                     
                         {/* Array con todas las sesiones iniciadas y display foto y nombre <p>Seleccioná una cuenta</p>
                                 {array.forEach(sesionIniciada => {
@@ -129,15 +164,32 @@ export default function Profile() {
                         */}
                 </article>
             </section>
-
-            {/*
+            <section id='modalForExit' className='modalOverlay'>
+                <article>
+                    <div><button onClick={displayExitModal}><IoMdClose style={ {fill: "var(--white)", fontSize:"1.5rem",} }></IoMdClose></button></div>
+                    <p className='encabezadoModal'>¿Desea cerrar sesión?</p>
+                    <div>
+                        <button className='btnVioletaRedondo'>Sí, cerrar sesión</button>
+                        <button className='btnSecundario' onClick={displayExitModal}>Cancelar</button>
+                    </div>
+                </article>
+            </section>
             <section id='modalDeletePic' className='modalOverlay'>
                 <article>
                     <div><button onClick={displaylDeletePicModal}><IoMdClose style={ {fill: "var(--white)", fontSize:"1.5rem",} }></IoMdClose></button></div>
-                    <p>¿Quiere cerrar la sesión?</p>
+                    <p className='encabezadoModal'>¿Quiere eliminar su foto de perfil?</p>
+                    <div>
+                        <button onClick={userPicEliminado} className='btnVioletaRedondo'>Sí, eliminarla</button>
+                        <button className='btnSecundario' onClick={displaylDeletePicModal}>Cancelar</button>
+                    </div>
                 </article>
             </section>
-            */}
+        
+            
+            <p>Issues: no se puede seleccionar una imagen, eliminarla y volver a seleccionar la misma imagen</p>
+            <p>Issues: no toma el displayModal desde el primer click sino desde el segundo</p>
+            <p>Los datos no se guardan en ningún lado, la sesión no se puede cerrar</p>
+            <p>Falta la validación de datos</p>
         </div>
     )
 }

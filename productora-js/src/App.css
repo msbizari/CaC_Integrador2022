@@ -21,6 +21,8 @@ body {
   color: var(--white);
 } .encabezadoSize {
   font-size: 2rem;
+} .capitalize {
+  text-transform: capitalize;
 }
 .btnVioletaRedondo {
   background-color: var(--accent_color);
