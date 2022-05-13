@@ -7,7 +7,6 @@ function App() {
 
   return (
     <div>
-      <Profile></Profile>
     <React.Fragment>
       <Navbar />
     </React.Fragment>
