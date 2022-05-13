@@ -1,9 +1,54 @@
-
-#perfilSection > section:first-of-type > img:first-of-type{
+body {
+    position: relative;
+}
+#perfilSection > section:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}#perfilSection > section:first-of-type > article:first-of-type > img:first-of-type{
     width: 80%;
+    height: 80%;
+    max-height: 250px;
     display: block;
     max-width: 250px;
+    margin-left: calc(1.8rem + 10px);
     border-radius: 100%;
+} #perfilSection > section:first-of-type > button{
+    margin: 20px 0px;
+    display: block;
+    max-width: 200px;
+} #perfilSection > section:first-of-type > article:first-of-type{
+    position: relative;
+} #perfilSection > section:first-of-type > article:first-of-type > button:first-of-type{
+    z-index: 4;
+    border-radius: 100%;
+    padding: 5px;
+    background-color: var(--primary_color);
+    border: 3px solid #121212;
+    width: calc(1.8rem + 10px);
+    height: calc(1.8rem + 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 10%;
+} #perfilSection > section:first-of-type  > div:nth-of-type(1) button{
+    display: block;
+    padding: 5px 10px;
+    background-color: transparent;
+    min-width: 250px;
+    max-width: 350px;
+} #perfilSection > section:first-of-type  > div:nth-of-type(1) button:first-of-type {
+    border:  1px solid var(--black_unactive);
+} #perfilSection > section:first-of-type  > div:nth-of-type(1) button:not(:first-of-type){
+    border-top:  none;
+    border-left:  1px solid var(--black_unactive);
+    border-right:  1px solid var(--black_unactive);
+    border-bottom:  1px solid var(--black_unactive);
+}  #perfilSection > section:first-of-type  > div:nth-of-type(1) button:hover{
+    background-color: var(--primary_color);
+    color: #121212;
 }
 #formProfileEdit {    
     align-content: flex-start;
@@ -11,11 +56,6 @@
     flex-direction: column;
 } #formProfileEdit button {    
     margin-top: 10px;
-} #formProfileEdit fieldset {
-    display: flex;    
-    align-items: flex-start;
-    flex-direction: row;
-    align-content: space-between;
 } #formProfileEdit label {
     display: block;
 } #formProfileEdit input {
@@ -27,7 +67,7 @@
 } #formProfileEdit input:invalid {
     color: var(--red);
     border: 1px solid var(--red);
-} #formProfileEdit input:focus {
+} #formProfileEdit input:focus,  #formProfileEdit input:active {
     color: var(--white);
     border: 1px solid var(--white);
 } :-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus {
@@ -42,28 +82,112 @@
     margin-bottom: 10px;
 } .row {
     flex-wrap: nowrap
-} .capitalize {
-    text-transform: capitalize;
+} .btnSecundario {
+  background-color: transparent;
+  color: var(--black_unactive);
+  border: none;
+  font-weight: bold;
+} .btnSecundario:hover, .btnSecundario:active{
+    color: var(--white);
+} #perfilSection > section:first-of-type > p:first-of-type {
+    text-align: center;
+}
+/*Overlays*/
+#modalForPic, #modalForSession, #modalForExit, #modalDeletePic{
+    display: none;
+} .modalOverlay {
+    width: 100%;
+    height: 100vh;
+    background-color: #0606069c;
+    position: fixed;
+    top: 0%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+} .modalOverlay > article{
+    width: 80%;
+    max-width: 800px;
+    min-height: 250px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 20px;
+}  .modalOverlay > article > div:first-of-type > button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+} .encabezadoModal {
+    font-size: 1.3rem;
 }
 
+#modalForPic > article > label{
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+} #modalForPic > article > input[type="file"]{
+    display: block;
+    background-color: transparent;
+} #modalForPic > article > input[type="file"] {
+    color: transparent;
+}
+#modalForPic > article > input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+#modalForPic > article > input[type="file"]::before {
+    content: 'Seleccionar archivo';
+    background-color: var(--accent_color);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+} #modalForExit > article > div:nth-of-type(2), #modalDeletePic > article > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} #modalForExit > article > div:nth-of-type(2) > button, #modalDeletePic > article > div:nth-of-type(2) > button {
+    display: block;
+}  #modalForExit > article >  div:nth-of-type(2) > button:not(:first-of-type), #modalDeletePic > article > div:nth-of-type(2) > button:not(:first-of-type) {
+    margin-left: 20px;
+} 
 @media screen and (max-width: 767px) {
-    #perfilSection > section:first-of-type {
+    #perfilSection > section {
         display: flex;
         flex-direction: column;
         align-items: center;
+    } #perfilSection > section:nth-of-type(2) {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    } #formProfileEdit > fieldset > div > label{
+        margin-top: 2.5px;
+    }  #formProfileEdit > fieldset > div > input{
+        margin-bottom: 2.5px;
     } 
 }
 
 @media screen and (min-width: 768px) {
     #perfilSection {
         display: flex;
+        justify-content: center; 
         flex-direction: row;
+        align-items: flex-start;
     } #perfilSection > section:nth-of-type(2) {
         margin-left: 20px;
-    }
-    #perfilSection {
-        display: flex;
-        justify-content: center; 
-        align-items: center;
+    } #formProfileEdit fieldset {
+        display: flex;    
+        align-items: flex-start;
+        flex-direction: row;
+        align-content: space-between;
     } 
+} 
+@media screen and (min-width: 890px) {
+    #perfilSection > section {
+        padding: 20px;
+    }
 }

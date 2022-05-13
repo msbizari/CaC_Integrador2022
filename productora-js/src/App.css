@@ -21,6 +21,13 @@ body {
   color: var(--white);
 } .encabezadoSize {
   font-size: 2rem;
+} .subtitulo {
+  color: var(--primary_color);
+  font-size: 1.7rem;
+  padding: 0%;
+  margin: 10px 0px;
+}.capitalize {
+  text-transform: capitalize;
 }
 .btnVioletaRedondo {
   background-color: var(--accent_color);

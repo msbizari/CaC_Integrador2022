@@ -1,0 +1,84 @@
+header {
+    width: 100vw;
+    height: 80vh;
+    background-image: url('src/img/nosotrosPortada.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+} header > div:first-of-type {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    background: linear-gradient(141deg, rgba(0, 0, 0, 0.408) 0%, rgb(0, 0, 0) 100%);
+} header > p {
+    z-index: 2;
+    padding: 0px;
+    text-align: center;
+} header > p:first-of-type {
+    margin: 20px 0px;
+} header > p:nth-of-type(2) {
+    margin-bottom: 10px;
+    font-family: 'Gugi', cursive;
+    text-transform: uppercase;
+}
+main {
+    padding: 4vh 5vw;
+    width: 100%;
+}  main > article:first-of-type > section {
+    margin-bottom: 40px;
+}
+
+
+@media screen and (max-width: 720px) {
+    main > article:first-of-type > section {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+    } main > article:first-of-type > section > div {
+        width: 90%;
+    } main > article:first-of-type > section > div > img {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 721px) {
+    main section:nth-of-type(odd) {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    } main section:nth-of-type(even) {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }  main  > article:first-of-type > section > div > img {
+        display: inline-block;
+        width: 100%;
+    }  main > article:first-of-type > section:nth-of-type(odd) > div {
+        width: 60%;
+        min-width: 300px;
+        max-width: 700px;
+        padding-left: 20px;
+    } main > article:first-of-type > section:nth-of-type(even) > div {
+        width: 50%;
+        min-width: 300px;
+        max-width: 700px;
+        padding-right: 20px;
+    }
+}
