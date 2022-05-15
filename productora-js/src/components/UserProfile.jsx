@@ -184,12 +184,6 @@ export default function Profile() {
                     </div>
                 </article>
             </section>
-        
-            
-            <p>Issues: no se puede seleccionar una imagen, eliminarla y volver a seleccionar la misma imagen</p>
-            <p>Issues: no toma el displayModal desde el primer click sino desde el segundo</p>
-            <p>Los datos no se guardan en ningún lado, la sesión no se puede cerrar</p>
-            <p>Falta la validación de datos</p>
         </div>
     )
 }
