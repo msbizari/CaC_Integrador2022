@@ -1,0 +1,46 @@
+:root{
+    --primary-color:#764AF1;
+    --secondary-color:#9772
+}
+
+.container-login{
+    align-items:center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:30vh;  
+}
+form{
+    align-items: left;
+    border: 2px solid;
+    border-radius:10px;
+    border-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 20rem;
+}
+input{
+    width: 100%;
+}
+label{
+    text-align: left;
+}
+.div-button-log{
+    display: flex;
+    justify-content: center;
+}
+.button-login{
+    background-color:var(--primary-color);
+    border-radius: 6px;
+    margin: 10px;
+    padding: 5px 32px;
+    width: 15rem;
+}
+.button-login:hover{
+    background-color:var(--secondary-color);
+}
+p{
+    padding: 10px;
+}
+
