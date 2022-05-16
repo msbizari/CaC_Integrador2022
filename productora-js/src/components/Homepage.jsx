@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Nosotros from './Nosotros'
 import '../styles/homepage.css';
 import { Card, Container, Col, Row} from 'react-bootstrap'
 
@@ -74,8 +75,25 @@ function Homepage(){
         setMovieList(filteredResponse)
     },[])
 
+    const skillsList = [
+        {title: 'Budgeting',
+        porcentaje: '80%',
+        class: 'x-80'},
+        {title: 'Creatividad',
+        porcentaje: '60%',
+        class: 'x-60'},
+        {title: 'Edición',
+        porcentaje: '80%',
+        class: 'x-80'},
+        {title: 'Gionaje',
+        porcentaje: '70%',
+        class: 'x-70'},
+        {title: 'Organización',
+        porcentaje: '90%',
+        class: 'x-90'}
+    ];
     return(
-        <div>
+        <div className='margin_wholePage'>
             <section id='banner'>
                 <div></div>
                 <div>
@@ -91,7 +109,7 @@ function Homepage(){
                     <div>
                         <p className='subtitulo'>Nosotros</p>
                         <p>Especialistas en producciones audiovisuales y storytelling. Trabajamos con los mejores productores para traerte cine de calidad. Traemos prestigio al cine Argentino.</p>
-                        <p><a>Leé más sobre nosotros acá</a></p>
+                        <p>Leé más sobre nosotros acá</p>
                     </div>
                 </article>
                 <article>
@@ -118,59 +136,44 @@ function Homepage(){
                         </Container>
                     </div>
                 </article>
-                <article>
+                <article id="ctn_skills">
                     <div>
                         <p className='subtitulo'>Skills</p>
                     </div>
                     <div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
+                        <Container>
+                            <Row>
+                                {skillsList.map((skills) => (
+                                    <Col sm={4} md={4} lg={2}>
+                                        <div className="chart">
+                                            <div className={skills.class}>
+                                                <p>{skills.porcentaje}</p>
+                                            </div>
+                                            <p className='skills_text'>{skills.title}</p>
+                                        </div>
+                                    </Col>
+                                )) }
+                            </Row>
+                        </Container>
                     </div>
                 </article>
                 <article>
                     <div>
                         <p className='subtitulo'>Confían en nosotros</p>
                     </div>
-                    <div>
-                        
-                    <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
-                        <div>
-                            <img src="" alt="" />
-                            <p>Creatividad</p>
-                        </div>
+                    <div> {/*
+                        <Container>
+                            <Row>
+                                <Col sm={4} md={4} lg={2}>
+                                    <div className="confian">
+                                        <div className={skills.class}>
+                                            <p>{skills.porcentaje}</p>
+                                        </div>
+                                        <p className='skills_text'>{skills.title}</p>
+                                    </div>
+                                </Col>
+                            </Row>
+                                </Container> */}
                     </div>
                 </article>
             </section>

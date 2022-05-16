@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Card, Container, FormControl, InputGroup, Col, Row} from 'react-bootstrap'
-import Navbar from './Navbar'
 
 const response = {
     "searchType": "Movie",
@@ -92,7 +91,6 @@ export default function SearchPage() {
 
   return (
     <Container>
-        <Navbar />
         <SearchBar />
         <Row>
             {

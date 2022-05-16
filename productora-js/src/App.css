@@ -7,7 +7,7 @@
   color: white;
 }
 body {
-  background-color: #121212 !important;
+  background-color: var(--black) !important;
 }
 :root {
   --primary_color: #BB86FC;
@@ -15,6 +15,7 @@ body {
   --white: #FFFFFF;
   --black_unactive: #5E5E5E;
   --red: #F24848;
+  --black: #121212;
 
 }
 .blanco {
@@ -50,11 +51,11 @@ nav {
   align-items: center;
   width: 100%;
   background-color: #393939;
-} nav > div:first-of-type {
+} #navbarLogo {
   display: flex;
   align-items: center;
   flex-direction: row;
-} nav > div:first-of-type > div {
+} #navbarLogo > div{
   padding: 0%;
   margin: 0%;
   height: 50px;
@@ -62,13 +63,12 @@ nav {
   padding: 5px;
   background-color: var(--white);
   border-radius: 100%;
-}nav > div:first-of-type > div > img {
-  height: 100%;
-} nav > div:first-of-type > p {
+} #navbarLogo > div > img {
+  height: 40px;
+} #navbarLogo > p {
   display: inline-block;
   font-family: 'Gugi', cursive;
   font-size: 1rem;
-  line-height: 0%;
   padding: 0%;
   margin: 0px 0px 0px 10px;
 }  nav > ul, footer  > section > ul {
@@ -78,9 +78,11 @@ nav {
   margin: 0%;
 } nav > ul > li, footer  > section > ul > li{
   display: inline-block;
+  background-color: transparent;
+  border: none;
 } nav > ul > li:not(:first-of-type),  footer > section > ul > li:not(:first-of-type) {
   margin-left: 10px;
-} nav > ul > li:first-of-type > button{
+} #btnSearch{
   background-color: transparent;
   border: none;
 } 
@@ -93,7 +95,7 @@ footer > section {
   align-items: center;
   align-content: center;
 } 
-footer > section >div > p {
+footer > section > div > p {
   padding: 0%;
   margin: 0%;
 }
@@ -103,5 +105,13 @@ footer {
 } footer > section:first-of-type{
   background-color: #393939;
   padding: 0.8rem
-  
+} footer > section:nth-of-type(2) {
+  padding: 0.6rem
+}
+
+
+@media screen and (max-width:480px) {
+  #navbarLogo > div {
+    display: none;
+  }
 }
