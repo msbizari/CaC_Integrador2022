@@ -22,24 +22,16 @@
 } .ctn_page {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
     width: 100%;
     max-width: 980px;
-}
-
-
-@media screen and (min-width: 768px) {
-    .ctn_page {
-        display: flex;
-        justify-content: center; 
-        flex-direction: row;
-        align-items: flex-start;
-    } #perfilSection > section:nth-of-type(2) {
-        margin-left: 20px;
-    } #formProfileEdit fieldset {
-        display: flex;    
-        align-items: flex-start;
-        flex-direction: row;
-        align-content: space-between;
-    } 
+} .ctn_page > article{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 2px solid #5E5E5E;
+} .ctn_page > article > div > p:first-of-type  {
+    display: block;
 }
