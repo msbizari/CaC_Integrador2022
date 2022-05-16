@@ -27,11 +27,11 @@
     align-content: flex-start;
     width: 100%;
     max-width: 980px;
-} .ctn_page > article{
+} .ctn_page > article:first-of-type, .ctn_page > article:not(:first-of-type) > div:nth-of-type(2){
     display: flex;
     flex-direction: row;
     width: 100%;
-    border-bottom: 2px solid #5E5E5E;
-} .ctn_page > article > div > p:first-of-type  {
-    display: block;
+}
+.ctn_page > article {
+    border-bottom: 1px solid #5E5E5E;
 }

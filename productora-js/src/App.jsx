@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Homepage from './components/Homepage'
 import Profile from './components/UserProfile'
 import Nosotros from './components/Nosotros'
@@ -15,6 +16,7 @@ function App() {
     <React.Fragment>
       <Navbar />
       <Homepage></Homepage>
+      <Footer></Footer>
     </React.Fragment>
     </div>
   )
