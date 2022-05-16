@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
+import Homepage from './components/Homepage'
 import Profile from './components/UserProfile'
 import Nosotros from './components/Nosotros'
 import FormularioRegistro from './components/FormularioRegistro'
@@ -12,7 +13,7 @@ function App() {
     <div>
     <React.Fragment>
       <Navbar />
-      <FormularioRegistro/>
+      <Homepage></Homepage>
     </React.Fragment>
     </div>
   )

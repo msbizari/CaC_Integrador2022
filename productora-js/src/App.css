@@ -42,3 +42,45 @@ body {
   border-style:solid;
   border-color: purple;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  width: 100%;
+  background-color: #393939;
+} nav > div:first-of-type {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+} nav > div:first-of-type > div {
+  padding: 0%;
+  margin: 0%;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  background-color: var(--white);
+  border-radius: 100%;
+}nav > div:first-of-type > div > img {
+  height: 100%;
+} nav > div:first-of-type > p {
+  display: inline-block;
+  font-family: 'Gugi', cursive;
+  font-size: 1rem;
+  line-height: 0%;
+  padding: 0%;
+  margin: 0px 0px 0px 10px;
+}  nav > ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0%;
+  margin: 0%;
+} nav > ul > li{
+  display: inline-block;
+} nav > ul > li:not(:first-of-type){
+  margin-left: 10px;
+} nav > ul > li:first-of-type > button{
+  background-color: transparent;
+  border: none;
+} 
