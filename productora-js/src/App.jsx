@@ -6,6 +6,7 @@ import Profile from './components/UserProfile'
 import Nosotros from './components/Nosotros'
 import FormularioRegistro from './components/FormularioRegistro'
 import Login from './components/Login'
+import SearchPage from './components/SearchPage'
 
 function App() {
 
