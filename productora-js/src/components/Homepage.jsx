@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Nosotros from './Nosotros'
+import BtnVerNosotros from './BtnVerNosotros'
+
 import '../styles/homepage.css';
 import { Card, Container, Col, Row} from 'react-bootstrap'
 
 function Homepage(){
+    const [verNosotros, setNosotros] = useState('cargar')
+
     const response = {
         "searchType": "Movie",
         "expression": "inception 2010",
@@ -109,7 +113,10 @@ function Homepage(){
                     <div>
                         <p className='subtitulo'>Nosotros</p>
                         <p>Especialistas en producciones audiovisuales y storytelling. Trabajamos con los mejores productores para traerte cine de calidad. Traemos prestigio al cine Argentino.</p>
-                        <p>Leé más sobre nosotros acá</p>
+                        
+                        {verNosotros === 'cargar' && (
+                            <BtnVerNosotros irANosotros={() => setNosotros('mostrar-nosotros') } />
+                        )}
                     </div>
                 </article>
                 <article>
@@ -161,22 +168,43 @@ function Homepage(){
                     <div>
                         <p className='subtitulo'>Confían en nosotros</p>
                     </div>
-                    <div> {/*
-                        <Container>
-                            <Row>
-                                <Col sm={4} md={4} lg={2}>
-                                    <div className="confian">
-                                        <div className={skills.class}>
-                                            <p>{skills.porcentaje}</p>
-                                        </div>
-                                        <p className='skills_text'>{skills.title}</p>
-                                    </div>
-                                </Col>
-                            </Row>
-                                </Container> */}
+                    <div id='ctn_confian'> 
+                        <Row className='spaceBetween'>
+                            <Col sm={4} md={4} lg={2}>
+                                <div className="confian">
+                                    <img src="src/img/paramount.svg"></img>
+                                </div>
+                            </Col>
+                            <Col sm={4} md={4} lg={2}>
+                                <div className="confian">
+                                    <img src="src/img/sony.svg"></img>
+                                </div>
+                            </Col>
+
+                            <Col sm={4} md={4} lg={2}>
+                                <div className="confian">
+                                    <img src="src/img/warner.svg"></img>
+                                </div>
+                            </Col>
+
+                            <Col sm={4} md={4} lg={2}>
+                                <div className="confian">
+                                    <img src="src/img/sony.svg"></img>
+                                </div>
+                            </Col>
+
+                            <Col sm={4} md={4} lg={2}>
+                                <div className="confian">
+                                    <img src="src/img/paramount.svg"></img>
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
                 </article>
             </section>
+            {verNosotros === 'mostrar-nosotros' && 
+                <Nosotros></Nosotros>
+            }
         </div>
     )
 }
