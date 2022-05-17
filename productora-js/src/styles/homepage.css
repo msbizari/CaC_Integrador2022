@@ -12,7 +12,7 @@
     align-content: center;
 }
 #banner {
-    background-image: url();
+    background-image: url('src/img/nosotrosPortada.jpg');
     background-color: rgb(101, 101, 101);
     width: 100%;
     height: 80vh;
@@ -59,6 +59,7 @@
 } .chart {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: calc(var(--size) + 20px);
     align-content: center;
@@ -71,6 +72,9 @@
 .chart > div:first-of-type, .confian {
     width: var(--size);
     height: var(--size);
+} .centerHorizontal {
+    display: flex;
+    justify-content: center;
 }
 .chart > div:first-of-type {
     margin: 1em auto;
@@ -122,7 +126,6 @@
     color: var(--primary_color);
 }
 .spaceBetween {
-    justify-content: space-between;
     width: 100%;
     display: flex;
 }

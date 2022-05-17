@@ -148,20 +148,16 @@ function Homepage(){
                         <p className='subtitulo'>Skills</p>
                     </div>
                     <div>
-                        <Container>
-                            <Row>
+                            <Row className='spaceBetween'>
                                 {skillsList.map((skills) => (
-                                    <Col sm={4} md={4} lg={2}>
-                                        <div className="chart">
-                                            <div className={skills.class}>
-                                                <p>{skills.porcentaje}</p>
-                                            </div>
-                                            <p className='skills_text'>{skills.title}</p>
+                                    <Col className="centerHorizontal chart">
+                                        <div className={skills.class}>
+                                            <p>{skills.porcentaje}</p>
                                         </div>
+                                        <p className='skills_text'>{skills.title}</p>
                                     </Col>
                                 )) }
                             </Row>
-                        </Container>
                     </div>
                 </article>
                 <article>
@@ -170,30 +166,30 @@ function Homepage(){
                     </div>
                     <div id='ctn_confian'> 
                         <Row className='spaceBetween'>
-                            <Col sm={4} md={4} lg={2}>
+                            <Col className="centerHorizontal">
                                 <div className="confian">
                                     <img src="src/img/paramount.svg"></img>
                                 </div>
                             </Col>
-                            <Col sm={4} md={4} lg={2}>
+                            <Col className="centerHorizontal">
                                 <div className="confian">
                                     <img src="src/img/sony.svg"></img>
                                 </div>
                             </Col>
 
-                            <Col sm={4} md={4} lg={2}>
+                            <Col className="centerHorizontal">
                                 <div className="confian">
                                     <img src="src/img/warner.svg"></img>
                                 </div>
                             </Col>
 
-                            <Col sm={4} md={4} lg={2}>
+                            <Col className="centerHorizontal">
                                 <div className="confian">
                                     <img src="src/img/sony.svg"></img>
                                 </div>
                             </Col>
 
-                            <Col sm={4} md={4} lg={2}>
+                            <Col className="centerHorizontal">
                                 <div className="confian">
                                     <img src="src/img/paramount.svg"></img>
                                 </div>
