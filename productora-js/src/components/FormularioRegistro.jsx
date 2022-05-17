@@ -16,7 +16,7 @@ function Formulario() {
         </div>
       </form>
       <p>
-        ¿Ya tienes Cuenta? <a href="#">Inicia sesión</a>
+        ¿Ya tienes Cuenta? <a href="/IniciarSesion">Inicia sesión</a>
       </p>
     </div>
   );

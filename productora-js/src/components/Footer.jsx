@@ -14,16 +14,16 @@ function Footer(){
                     </div>
                     <ul>
                         <li>Seguinos</li>
-                        <li><a><AiFillInstagram style={ {fill: "#fafafa", fontSize:"1.2rem"} } /></a></li>
-                        <li><a><ImYoutube style={ {fill: "#fafafa", fontSize:"1.2rem"} } /></a></li>
-                        <li><a><FaFacebookSquare style={ {fill: "#fafafa", fontSize:"1.2rem"} } /></a></li>
+                        <li><a href="https://www.instagram.com/" target='_blank'><AiFillInstagram style={ {fill: "#fafafa", fontSize:"1.2rem"} } /></a></li>
+                        <li><a href="https://www.youtube.com/" target='_blank'><ImYoutube style={ {fill: "#fafafa", fontSize:"1.2rem"} } /></a></li>
+                        <li><a href="https://www.facebook.com/" target='_blank'><FaFacebookSquare style={ {fill: "#fafafa", fontSize:"1.2rem"} } /></a></li>
                     </ul>
                 </section>                
                 <section>
                     <ul>
-                        <li><a>Inicio</a></li>
-                        <li><a>Nosotros</a></li>
-                        <li><a>Búsqueda</a></li>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/Nosotros">Nosotros</a></li>
+                        <li><a href="/Buscar">Búsqueda</a></li>
                     </ul>
                 </section>
             </footer>

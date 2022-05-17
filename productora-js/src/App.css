@@ -3,7 +3,6 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  font-weight: 200;  
   color: white;
 }
 body {
@@ -86,7 +85,45 @@ nav {
   background-color: transparent;
   border: none;
 } 
+
+/*menu*/
+.navBar__menu {
+  margin-right: 0px;
+}
+.navBar__menu.active {
+  right: calc(25px + 20px + 5px); /*width hamburger--bar + padding navBar + 5 para margin*/
+}
+.navBar__hamburger {
+  cursor: pointer;
+
+  display: block;
+}
+.hamburger--bar {
+  background-color: var(--white);
+  height: 3px;
+  margin: 5px auto;
+  width: 25px;
+  display: block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.navBar__hamburger.active .hamburger--bar:nth-child(2) {
+  opacity: 0;
+}
+.navBar__hamburger.active .hamburger--bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.navBar__hamburger.active .hamburger--bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /*Footer*/
+footer a {
+  color: unset;
+}
+footer a:hover {
+  color: var(--accent_color);
+}
 footer > section {
   width: 100%;
   display: flex;
@@ -94,6 +131,7 @@ footer > section {
   justify-content: space-between;
   align-items: center;
   align-content: center;
+  flex-wrap: wrap;
 } 
 footer > section > div > p {
   padding: 0%;
@@ -109,9 +147,40 @@ footer {
   padding: 0.6rem
 }
 
-
 @media screen and (max-width:480px) {
   #navbarLogo > div {
     display: none;
+  } 
+  .navBar__menu {
+    height: 46px;}
+
+}
+@media screen and (min-width:480px) and (max-width: 580px) {
+  .navBar__menu {
+    height: 60px;}
+}
+@media screen and (max-width: 580px) {
+  .navBar__menu {
+    background-color: #393939;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: -200%;
+    padding-right: 10px;
+    transition: 0.3s;
+    z-index: 5;
+  } .navBar {
+    overflow:hidden;
+    position: relative;
   }
 }
+
+@media screen and (min-width: 580px) {
+  .navBar > div:last-of-type {
+    display: none;
+  }
+} 
+

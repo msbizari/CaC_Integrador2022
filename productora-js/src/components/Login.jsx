@@ -13,7 +13,7 @@ function Login() {
             <button className="button-login">Iniciar sesión</button>
           </div>
         </form>
-        <p>¿No tienes una cuenta? <a href="#">Registrate</a></p>
+        <p>¿No tienes una cuenta? <a href="/Registro">Registrate</a></p>
     </div>
   );
 }

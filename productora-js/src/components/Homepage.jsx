@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Nosotros from './Nosotros'
-import BtnVerNosotros from './BtnVerNosotros'
 
 import '../styles/homepage.css';
 import { Card, Container, Col, Row} from 'react-bootstrap'
 
 function Homepage(){
-    const [verNosotros, setNosotros] = useState('cargar')
 
     const response = {
         "searchType": "Movie",
@@ -105,7 +103,7 @@ function Homepage(){
                     <p className='encabezadoSize blanco'>Productores de cine</p>
                 </div>
             </section>
-            <section class='ctn_page'>
+            <section className='ctn_page'>
                 <article>
                     <div>
                         <img src="src/img/logoProductora.svg" alt="logo de la productora" />
@@ -113,10 +111,7 @@ function Homepage(){
                     <div>
                         <p className='subtitulo'>Nosotros</p>
                         <p>Especialistas en producciones audiovisuales y storytelling. Trabajamos con los mejores productores para traerte cine de calidad. Traemos prestigio al cine Argentino.</p>
-                        
-                        {verNosotros === 'cargar' && (
-                            <BtnVerNosotros irANosotros={() => setNosotros('mostrar-nosotros') } />
-                        )}
+                        <p>Leé más sobre nosotros <a href='/Nosotros'>acá</a></p>
                     </div>
                 </article>
                 <article>
@@ -198,9 +193,6 @@ function Homepage(){
                     </div>
                 </article>
             </section>
-            {verNosotros === 'mostrar-nosotros' && 
-                <Nosotros></Nosotros>
-            }
         </div>
     )
 }
