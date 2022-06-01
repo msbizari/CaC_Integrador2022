@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
     <React.Fragment>
-      <Navbar />
-      {/* <SearchPage /> */}
+      {/* <Navbar /> */}
+      <SearchPage />
     </React.Fragment>
     </div>
   )
