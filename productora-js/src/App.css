@@ -3,11 +3,10 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  font-weight: 200;  
   color: white;
 }
 body {
-  background-color: #121212 !important;
+  background-color: var(--black) !important;
 }
 :root {
   --primary_color: #BB86FC;
@@ -15,6 +14,7 @@ body {
   --white: #FFFFFF;
   --black_unactive: #5E5E5E;
   --red: #F24848;
+  --black: #121212;
 
 }
 .blanco {
@@ -42,3 +42,145 @@ body {
   border-style:solid;
   border-color: purple;
 }
+/*NavBar*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  width: 100%;
+  background-color: #393939;
+} #navbarLogo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+} #navbarLogo > div{
+  padding: 0%;
+  margin: 0%;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  background-color: var(--white);
+  border-radius: 100%;
+} #navbarLogo > div > img {
+  height: 40px;
+} #navbarLogo > p {
+  display: inline-block;
+  font-family: 'Gugi', cursive;
+  font-size: 1rem;
+  padding: 0%;
+  margin: 0px 0px 0px 10px;
+}  nav > ul, footer  > section > ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0%;
+  margin: 0%;
+} nav > ul > li, footer  > section > ul > li{
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+} nav > ul > li:not(:first-of-type),  footer > section > ul > li:not(:first-of-type) {
+  margin-left: 10px;
+} #btnSearch{
+  background-color: transparent;
+  border: none;
+} 
+
+/*menu*/
+.navBar__menu {
+  margin-right: 0px;
+}
+.navBar__menu.active {
+  right: calc(25px + 20px + 5px); /*width hamburger--bar + padding navBar + 5 para margin*/
+}
+.navBar__hamburger {
+  cursor: pointer;
+
+  display: block;
+}
+.hamburger--bar {
+  background-color: var(--white);
+  height: 3px;
+  margin: 5px auto;
+  width: 25px;
+  display: block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.navBar__hamburger.active .hamburger--bar:nth-child(2) {
+  opacity: 0;
+}
+.navBar__hamburger.active .hamburger--bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.navBar__hamburger.active .hamburger--bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/*Footer*/
+footer a {
+  color: unset;
+}
+footer a:hover {
+  color: var(--accent_color);
+}
+footer > section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+} 
+footer > section > div > p {
+  padding: 0%;
+  margin: 0%;
+}
+footer {
+  margin-top: 50px ;
+  width: 100%;
+} footer > section:first-of-type{
+  background-color: #393939;
+  padding: 0.8rem
+} footer > section:nth-of-type(2) {
+  padding: 0.6rem
+}
+
+@media screen and (max-width:480px) {
+  #navbarLogo > div {
+    display: none;
+  } 
+  .navBar__menu {
+    height: 46px;}
+
+}
+@media screen and (min-width:480px) and (max-width: 580px) {
+  .navBar__menu {
+    height: 60px;}
+}
+@media screen and (max-width: 580px) {
+  .navBar__menu {
+    background-color: #393939;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: -200%;
+    padding-right: 10px;
+    transition: 0.3s;
+    z-index: 5;
+  } .navBar {
+    overflow:hidden;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .navBar > div:last-of-type {
+    display: none;
+  }
+} 
+

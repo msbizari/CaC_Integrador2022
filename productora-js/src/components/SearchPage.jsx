@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Button, Card, Container, FormControl, InputGroup, Col, Row} from 'react-bootstrap'
-import Navbar from './Navbar'
 
 const base_url = `https://imdb-api.com/en/API/SearchTitle/${import.meta.env.VITE_MOVIES_API_KEY}`
 const response = {

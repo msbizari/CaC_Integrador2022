@@ -1,18 +1,14 @@
 import React from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
-import Profile from './components/UserProfile'
-import Nosotros from './components/Nosotros'
-import SearchPage from './components/SearchPage'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <div>
-    <React.Fragment>
-      {/* <Navbar /> */}
-      <SearchPage />
-    </React.Fragment>
+      <Navbar />
+      <Footer></Footer>
     </div>
   )
 }

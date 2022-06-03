@@ -1,11 +1,9 @@
 import React from 'react';
 import '../styles/nosotros.css';
-import Navbar from './Navbar';
 
 export default function Nosotros() {
     return (
-        <div>
-            <Navbar></Navbar>
+        <div id='nosotros'>
             <header className='container-fluid'>
                 <div></div>
                 <p className='encabezadoSize'>Nosotros</p>
