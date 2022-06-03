@@ -138,8 +138,7 @@ export default function SearchPage() {
 
   return (
     <Container>
-        <Navbar />
-        <InputGroup className="mb-3">
+        <InputGroup className="mb-3 mt-5">
             <FormControl
             placeholder="Busca peliculas, series, productoras"
             aria-label="Recipient's username"
